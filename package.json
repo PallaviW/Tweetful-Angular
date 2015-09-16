@@ -1,0 +1,23 @@
+{
+  "name": "tweetful-angular",
+  "version": "1.0.0",
+  "description": "deploy tweetful app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PallaviW/Tweetful-Angular.git"
+  },
+  "author": "Pallavi Walali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PallaviW/Tweetful-Angular/issues"
+  },
+  "homepage": "https://github.com/PallaviW/Tweetful-Angular#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
