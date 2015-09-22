@@ -1,2 +1,117 @@
 
-Hello  Pallavi!!
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <style type="text/css" >
+        .container{
+            width :100%;
+        }
+        .innercontainer{
+            width:100%;
+            float:left;
+            border:2px solid;
+        }
+        .madlibimg{
+            width: 30.4%;
+            float: left;
+            border: 2px solid;
+        }
+        .madliblogo{
+            width: 69.5%;
+            float: right;
+            border: 2px solid;
+            height: 14.7em;
+        }
+        .leftpanel{
+            width:30%;
+            float:left;
+            padding-left: 2em;
+        }
+        .rightpanel{
+            width:30%;
+            float:right;
+        }
+        .middlecontainer{
+            width:100%;
+            padding-left: 10px;
+            float:left;
+            height: 4em;
+        }
+        .bottomcontainer{
+            width:100%;
+            padding-left: 10px;
+            float:left;
+            height: 6em;
+        }
+        .secondary{
+            float:right;
+            margin-right: 4em;
+        }
+        .topmargin{
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<script type="text/javascript">
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+
+        $scope.isvariable = false;
+        $scope.Isshow = function(){
+            $scope.isvariable = $scope.isvariable ? true : false;
+        }
+
+        $scope.submitForm = function(){
+
+            if($scope.myform.$valid)
+            {
+
+            }
+        }
+            });
+
+</script>
+<div class="container" data-ng-controller="myCtrl" data-ng-app="myApp">
+    <div class="innercontainer">
+        <div class="madlibimg">
+            <img src="img/mad-lib-happy-face.png">
+        </div>
+        <div class="madliblogo">
+            <img src="img/ng-mad-libs-logo.png">
+        </div>
+    </div>
+    <form name="myform" data-ng-submit="submitForm(myform.isvalid)"  novalidate>
+    <div class="innercontainer" data-ng-show="!isvariable">
+        <div>
+            <div class="bottomcontainer"><h2> Provide the following words:</h2></div>
+            <div class="middlecontainer">
+                <div class="leftpanel">
+                    <input type="text" name="input" data-ng-model="femalename" placeholder="female name" required>
+                    <span class="error" data-ng-show="myform.input.$error.required">Required</span>
+                </div>
+                <div class="leftpanel"><input type="number" data-ng-model="jobtitle" placeholder="job title" required>
+                <span class="error" data-ng-show="myform.input.$error.number">Not valid number!</span></div>
+                <div class="rightpanel"><input type="text" data-ng-model="dirtytask" placeholder="Dirty task" required></div>
+
+            </div>
+            <div class="submit">
+                <button type="submit" class="btn btn-primary secondary" data-ng-click="isvariable = !isvariable"> Generate My Mad Lib </button>
+            </div>
+        </div>
+    </div>
+    </form>
+    <div class="innercontainer" data-ng-show="isvariable">
+        <div class="bottomcontainer topmargin"><div><strong>
+            {{femalename}}</strong> was a <strong>{{jobtitle}}</strong> who loved technology. Although she loved parts of her job,
+            she absolutely hated <strong>{{dirtytask}}</strong>.
+        </div>
+        </p>
+        <div class="bottomcontainer">
+            <button class="btn btn-primary secondary" data-ng-click="femalename = null ; dirtytask = null ; jobtitle = null;isvariable = false"> Start Over </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

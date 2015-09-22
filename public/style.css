@@ -1,0 +1,11 @@
+.container{
+    width :100px;
+}
+.madlibimg{
+    width:30px;
+    float: left;
+}
+.madliblogo{
+    width:70px;
+    float:right;
+}
